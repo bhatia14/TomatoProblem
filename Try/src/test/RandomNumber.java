@@ -1,5 +1,6 @@
 package test;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomNumber {
@@ -27,7 +28,18 @@ public class RandomNumber {
 						x+=0.1;
 				}
 				System.out.println(x);
+				
+				ArrayList<String> arrayList=new ArrayList();
+				arrayList.add("hello");
+				arrayList.set(0, "world");
+				System.out.println(arrayList);
+				
+				
 	}
+	
+	
+	
+	
 	
 
 }
