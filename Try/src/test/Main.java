@@ -120,7 +120,9 @@ public class Main {
 	
 	private static void combine(){
 		show();
-		//ArrayList<Double> arrayList=new ArrayList<Double>();
+		ArrayList<Double> arrayList=new ArrayList<Double>();
+		ArrayList<Double> arrayList1=new ArrayList<Double>();
+		double[] diff=new double[looseList.size()];
 		double[] data=new double[looseList.size()];
 		int i=0;
 		for(Loose loose:looseList){
@@ -130,13 +132,31 @@ public class Main {
     	}
 		
 		
-		for(Cluster cluster2:clusterList){
+			for(Cluster cluster2:clusterList){
+				
+			//				arrayList.add(cluster2.getMax()-cluster2.getContains());
+		arrayList.add(cluster2.getMax()-cluster2.getContains());		
+			}
 			
-		//				arrayList.add(cluster2.getMax()-cluster2.getContains());
-			System.out.println(binarySearch(cluster2.getMax()-cluster2.getContains(),data));
-		}
+			
+			for(i=0;i<data.length;i++){
+				for(Double ar:arrayList){
+					if(data[i]>ar){
+						diff[i]=data[i]-ar;
+					}else{
+						diff[i]=ar-data[i];
+					}
+				}
+				
+		 }
 		//System.out.println(arrayList);
-		
+			double min=0;
+			for(i=0;i<diff.length-1;i++){
+				System.out.println(diff[i]);
+				min=diff[0];
+				min=Math.min(min,diff[i+1]);
+			}
+		System.out.println(min);
 		
 		
 		
